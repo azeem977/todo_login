@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do App</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --accent: #10b981;
+      --danger: #ef4444;
+      --bg: #f9fafb;
+      --text: #111827;
+      --card: #ffffff;
+    }
+
+  body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg,rgb(54, 46, 201), #10b981,rgb(226, 65, 1)); /* Indigo to Green to Amber */
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #111827;
+}
+
+
+    @keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+    .container {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1); /* transparent white */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(10px); /* Glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
+
+    h1 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a.button {
+      background-color: var(--primary);
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    form {
+      margin: 1rem 0;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    input[type="submit"] {
+      padding: 0.6rem 1rem;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .actions a {
+      margin-right: 10px;
+      font-size: 14px;
+    }
+
+    .view { color: var(--primary); }
+    .edit { color: var(--accent); }
+    .delete { color: var(--danger); }
+
+    .auth {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 1rem;
+      }
+
+      th, td {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    {% block content %}
+    {% endblock content %}
+  </div>
+</body>
+</html>
+

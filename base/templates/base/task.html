@@ -1,0 +1,12 @@
+ {% extends "base/main.html" %}
+
+ 
+  
+
+{% block content %}
+<h1>Hello! Template is rendering ✅</h1>
+<p>Raw task object: {{ task }}</p>
+<p>Task title: {{ task.title }}</p>
+<p>Description: {{ task.description }}</p>
+<p>Status: {{ task.complete }}</p>
+{% endblock content %}
